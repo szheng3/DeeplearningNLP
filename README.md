@@ -20,3 +20,9 @@ Usage:
 Reference:
 
 https://deeplearning4j.org/word2vec#embed
+
+# Mentor:
+
+Professor Homayoun Yousefi'zadeh
+
+
