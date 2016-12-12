@@ -17,6 +17,6 @@ Usage:
 
 3. output file is located in the home dictionary (named: pathToWriteto.txt). 
 
-reference:
+Reference:
 
 https://deeplearning4j.org/word2vec#embed
