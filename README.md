@@ -11,7 +11,9 @@ Prerequirement: IntelliJ IDEA
 
 Usage:
 1. right click naturallearningprocessing.java in the src/main/java/ dictionary
+
 2. click run button
+
 3. output file is located in the home dictionary (named: pathToWriteto.txt). 
 
 reference:
