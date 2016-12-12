@@ -1,0 +1,36 @@
+2016-12-12 12:11:49,018 - [INFO] - from org.nd4j.nativeblas.NativeOps in main
+                
+Number of threads used for NativeOps: 4
+
+2016-12-12 12:11:49,072 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in main
+                
+Number of threads used for BLAS: 4
+
+2016-12-12 12:11:49,709 - [INFO] - from org.deeplearning4j.models.sequencevectors.SequenceVectors in main
+                
+Starting vocabulary building...
+
+2016-12-12 12:11:50,631 - [INFO] - from org.deeplearning4j.models.word2vec.wordstore.VocabConstructor in main
+                
+Sequences checked: [97162], Current vocabulary size: [242]
+
+2016-12-12 12:11:50,668 - [INFO] - from org.deeplearning4j.models.sequencevectors.SequenceVectors in main
+                
+Building learning algorithms:
+
+2016-12-12 12:11:50,669 - [INFO] - from org.deeplearning4j.models.sequencevectors.SequenceVectors in main
+                
+          building ElementsLearningAlgorithm: [SkipGram]
+
+2016-12-12 12:11:50,672 - [INFO] - from org.deeplearning4j.models.sequencevectors.SequenceVectors in main
+                
+Starting learning process...
+
+2016-12-12 12:14:44,173 - [INFO] - from org.deeplearning4j.models.sequencevectors.SequenceVectors in main
+                
+Epoch: [1]; Words vectorized so far: [634303];  Lines vectorized so far: [97162]; learningRate: [1.0E-4]
+
+2016-12-12 12:14:44,380 - [INFO] - from org.deeplearning4j.models.embeddings.loader.WordVectorSerializer in main
+                
+Wrote 242 with size of 100
+
