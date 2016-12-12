@@ -10,6 +10,7 @@ Prerequirement: IntelliJ IDEA
 
 
 Usage:
+
 1. right click naturallearningprocessing.java in the src/main/java/ dictionary
 
 2. click run button
