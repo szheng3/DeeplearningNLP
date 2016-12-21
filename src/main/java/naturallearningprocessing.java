@@ -14,42 +14,32 @@ import org.slf4j.LoggerFactory;
 import java.util.Collection;
 
 public class naturallearningprocessing {
-    private static Logger log = LoggerFactory.getLogger(Word2VecRawTextExample.class);
+	public static void main(String[] args) throws Exception {
+		System.out.println("sdf");
 
-    public static void main(String[] args) throws Exception {
+		String filePath = new ClassPathResource("raw_sentences.txt").getFile().getAbsolutePath();
 
-        String filePath = new ClassPathResource("raw_sentences.txt").getFile().getAbsolutePath();
+		System.out.println("Load Sentences....");
+		SentenceIterator iter = new BasicLineIterator(filePath);
+		TokenizerFactory t = new DefaultTokenizerFactory();
 
-        System.out.println("Load Sentences....");
-        SentenceIterator iter = new BasicLineIterator(filePath);
-        TokenizerFactory t = new DefaultTokenizerFactory();
+		t.setTokenPreProcessor(new CommonPreprocessor());
+		System.out.println("Building ....");
 
-        t.setTokenPreProcessor(new CommonPreprocessor());
-        System.out.println("Building ....");
+		Word2Vec vec = new Word2Vec.Builder().minWordFrequency(5).iterations(1).layerSize(100).seed(42).windowSize(5)
+				.iterate(iter).tokenizerFactory(t).build();
+		System.out.println("Fitting Word2Vec model....");
 
-        Word2Vec vec = new Word2Vec.Builder()
-                .minWordFrequency(5)
-                .iterations(1)
-                .layerSize(100)
-                .seed(42)
-                .windowSize(5)
-                .iterate(iter)
-                .tokenizerFactory(t)
-                .build();
-        System.out.println("Fitting Word2Vec model....");
+		vec.fit();
+		System.out.println("Writing word vectors to text file....");
 
-        vec.fit();
-        System.out.println("Writing word vectors to text file....");
+		WordVectorSerializer.writeWordVectors(vec, "pathToWriteto.txt");
 
+		System.out.println("Closest Words:");
+		Collection<String> lst = vec.wordsNearest("night", 10);
+		System.out.println("10 Words closest to 'night': " + lst);
 
-        WordVectorSerializer.writeWordVectors(vec, "pathToWriteto.txt");
-
-        System.out.println("Closest Words:");
-        Collection<String> lst = vec.wordsNearest("night", 10);
-        System.out.println("10 Words closest to 'night': " + lst);
-
-
-        UiServer server = UiServer.getInstance();
-        System.out.println("Started on port " + server.getPort());
-    }
+		UiServer server = UiServer.getInstance();
+		System.out.println("Started on port " + server.getPort());
+	}
 }
