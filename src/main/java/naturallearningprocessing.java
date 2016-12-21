@@ -15,10 +15,10 @@ import java.util.Collection;
 
 public class naturallearningprocessing {
 	public static void main(String[] args) throws Exception {
-		System.out.println("sdf");
+		System.out.println("asdf");
 
 		String filePath = new ClassPathResource("raw_sentences.txt").getFile().getAbsolutePath();
-
+		System.out.println("git test");
 		System.out.println("Load Sentences....");
 		SentenceIterator iter = new BasicLineIterator(filePath);
 		TokenizerFactory t = new DefaultTokenizerFactory();
